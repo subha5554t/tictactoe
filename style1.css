@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1c1c1c, #3a1c71);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    height: 65px;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Baloo Bhaina 2', cursive;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/* Updated: Game info on the left */
+.gameInfo {
+    padding: 30px;
+    width: 250px;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.gameInfo h1 {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+}
+
+.info {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 8px;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Winning GIF is now aligned left */
+.imgbox img {
+    width: 0;
+    transition: width 1s ease-in-out;
+    border-radius: 10px;
+}
+
+/* Grid for Tic Tac Toe */
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 12vw);
+    grid-template-columns: repeat(3, 12vw);
+    position: relative;
+    gap: 8px;
+    perspective: 1000px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+.box {
+    background: linear-gradient(145deg, #242424, #3a3a3a);
+    border: 3px solid #ff00ff;
+    font-size: 5vw;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 0, 255, 0.5);
+    transform: rotateX(10deg) rotateY(10deg);
+    transition: all 0.3s ease-in-out;
+}
+
+.box:hover {
+    background: linear-gradient(145deg, #4b0082, #ff00ff);
+    text-shadow: 0 0 15px #fff, 0 0 30px #ff00ff;
+    box-shadow: 0 5px 20px rgba(255, 0, 255, 0.8);
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+/* Winning Line Animation */
+.line {
+    background: #ff00ff;
+    height: 5px;
+    width: 0;
+    position: absolute;
+    transition: width 0.8s ease-in-out;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+/* Reset Button */
+#reset {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff00ff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 0, 255, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+#reset:hover {
+    background: #fff;
+    color: #ff00ff;
+    box-shadow: 0 6px 15px rgba(255, 0, 255, 0.8);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 950px) {
+    .gameContainer {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .gameInfo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+} 
