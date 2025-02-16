@@ -50,6 +50,7 @@ function checkWin() {
             document.querySelector('.imgbox img').style.width = "200px";
             document.querySelector(".line").style.transform = `translate(${x}vw, ${y}vw) rotate(${angle}deg)`;
             document.querySelector(".line").style.width = "20vw";
+            gameover.play(); // Play game over sound
             return;
         }
     }
